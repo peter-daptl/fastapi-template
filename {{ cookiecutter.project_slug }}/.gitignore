@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+.venv/
+venv/
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.coverage
+.pytest_cache/
+htmlcov/
+.ipynb_checkpoints
+.mypy_cache/
+.ruff_cache/
+
+# IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS
+.DS_Store
+.Trashes
+Thumbs.db
+
+# Database
+*.sqlite
+*.sqlite3
+/data/*.db
+
+# Package Managers
+Pipfile.lock
+poetry.lock
+{% if cookiecutter.use_poetry != "y" %}
+pyproject.toml # Ignore if not using poetry
+{% endif %}
+{% if cookiecutter.use_pipenv != "y" %}
+Pipfile # Ignore if not using pipenv
+{% endif %}

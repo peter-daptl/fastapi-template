@@ -1,0 +1,29 @@
+{% if cookiecutter.use_pipenv == "y" %}
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+fastapi = "==0.115.12"  # Updated
+uvicorn = {extras = ["standard"], version = "==0.29.0"}
+sqlalchemy = {extras = ["asyncio"], version = "==2.0.41"}
+aiosqlite = "==0.20.0"
+fastapi-utils = "==0.8.0"  # Updated
+python-dotenv = "==1.0.1"
+typing-inspect = "==0.9.0"
+
+[dev-packages]
+pytest = "==8.2.1"
+pytest-asyncio = "==1.0.0"
+pytest-cov = "==6.1.1"
+httpx = "==0.27.0"
+pre-commit = "==3.7.1"
+black = "==24.4.2"
+flake8 = "==7.0.0"
+isort = "==5.13.2"
+autoflake = "==2.3.1"
+
+[requires]
+python_version = "3.12" # Adjusted to 3.12 for broader compatibility, can be changed.
+{% endif %}
