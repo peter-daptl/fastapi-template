@@ -37,7 +37,8 @@ repos:
     hooks:
       - id: pytest
         name: pytest
-        entry: pytest
+        # CORRECTED: Add --cov=. to the entry to include coverage reporting
+        entry: pytest --cov=.
         language: system
         pass_filenames: false
         always_run: true # Always run tests, even if no files changed (good for safety)
