@@ -31,12 +31,7 @@ To use this template, you need `cookiecutter` installed. If you don't have it, i
 
 ```bash
 pip install cookiecutter
-```
-
-Once installed, run the following command, replacing `[YOUR_REPO_URL]` with the actual Git URL of this template repository (e.g., `https://github.com/your-username/your-fastapi-template.git`):
-
-```
-cookiecutter [YOUR_REPO_URL]
+cookiecutter https://github.com/peter-daptl/fastapi-template.git
 ```
 
 Cookiecutter will then prompt you for several project-specific details. Answer these questions to customize your new FastAPI project.
