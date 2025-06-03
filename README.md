@@ -32,7 +32,9 @@ cookiecutter https://github.com/peter-daptl/fastapi-template.git
 Cookiecutter will then prompt you for several project-specific details. Answer these questions to customize your new FastAPI project.
 
 ---
-After generation:
+## After generation:
+
+### Note - A separate README will be generated in your template also summarizing these notes.
 
 1.  **Navigate into your new project directory:**
     ```bash
@@ -94,6 +96,39 @@ After generation:
     uvicorn main:app --reload
     ```
     Your API will be available at `http://127.0.0.1:8000`.
+
+---
+## 🛡️ Pre-commit Hooks
+
+Projects generated from this template utilize [Pre-commit](https://pre-commit.com/) hooks to automatically check and format your code before every commit. This helps maintain consistent code style, catches common errors early, and ensures code quality across the team.
+
+### Installation & Setup
+
+1.  **Install `pre-commit`** (if you don't have it already):
+    ```bash
+    pip install pre-commit
+    ```
+2.  **Install the Git hooks** into your repository (from the project's root directory):
+    ```bash
+    pre-commit install
+    ```
+    Once installed, the hooks will automatically run every time you attempt to `git commit`. If a hook fails, the commit will be aborted, allowing you to fix the issues before committing.
+
+### Configured Hooks
+
+The following hooks are configured in `.pre-commit-config.yaml` and will run on your code:
+
+* **`trailing-whitespace`**: Removes extra whitespace at the end of lines.
+* **`end-of-file-fixer`**: Ensures that files end with a newline and removes any excess newlines at the end of files.
+* **`check-yaml`**: Checks YAML file syntax.
+* **`check-added-large-files`**: Prevents accidentally adding very large files to the repository.
+* **`debug-statements`**: Catches common debug statements (`print`, `breakpoint`, `ipdb.set_trace`, etc.) that might be left in production code.
+* **`requirements-txt-fixer`**: Automatically sorts and de-duplicates entries in `requirements.txt`.
+* **`black`**: Formats Python code to adhere to the Black style guide (`--line-length=100`).
+* **`isort`**: Sorts Python import statements (`--profile=black`, `--line-length=100`).
+* **`flake8`**: Lints Python code to enforce style consistency and detect potential errors (`--max-line-length=100`, `--ignore=E203,W503` to avoid conflicts with Black).
+* **`autoflake`**: Automatically removes unused imports and unused variables from Python code (`--in-place`, `--remove-unused-variables`, `--remove-all-unused-imports`).
+* **`pytest` (local hook)**: Runs all your project's tests (`pytest`). This hook is configured to `always_run`, meaning tests will execute on every commit, regardless of which files changed. This is a crucial safety measure to prevent committing breaking changes.
 
 ---
 
