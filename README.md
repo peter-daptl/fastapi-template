@@ -16,12 +16,7 @@ This repository provides a robust and opinionated Cookiecutter template for quic
 * **Flake8:** Pluggable linting tool for PEP 8 compliance and more.
 * **Modular Structure:** Organized into `api`, `schemas`, `database`, `config`, etc., for maintainability.
 * **FastAPI Dependency Injection:** Structured use of FastAPI's dependency system.
-* **Environment-based Settings:** Configuration loaded via `pydantic-settings`.
 * **Basic API Versioning (Optional):** Setup for `api/v1` routes.
-* **Docker Support (Optional):** Dockerfile and docker-compose for development.
-* **Database Choices (Optional):** Setup for SQLite or PostgreSQL.
-* **User Authentication (Optional):** Basic scaffold for user authentication.
-* **Background Tasks/Celery (Optional):** Initial setup for a background task queue.
 
 ---
 
